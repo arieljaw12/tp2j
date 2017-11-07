@@ -1,4 +1,4 @@
-package tp2j;
+package unitTests;
 
 import org.junit.Test;
 
