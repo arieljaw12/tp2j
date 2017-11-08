@@ -2,28 +2,24 @@ package modelo;
 
 public class Jugador {
 	private String nombre;
-	private int dinero;
+	private int capital;
 
 	public Jugador(String unNombre) {
 		nombre = unNombre;
-		dinero = 100000;
+		capital = 100000;
 	}
 
 	public Jugador() {
 		nombre = "";
-		dinero = 100000;
-	}
-
-	public int foo() {
-		return 0;
+		capital = 100000;
 	}
 
 	public String tuNombreEs() {
 		return nombre;
 	}
 
-	public int dineroDisponible() {
-		return dinero;
+	public int capitalTotal() {
+		return capital;
 	}
 
 	public void caerEnCasillero(Casillero unCasillero) {
@@ -32,7 +28,7 @@ public class Jugador {
 	}
 
 	public void entregarDinero(int unMonto) {
-		dinero += unMonto;
+		capital += unMonto;
 	}
 
 }

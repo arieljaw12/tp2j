@@ -8,12 +8,7 @@ import modelo.Quini6;
 
 public class JugadorTest {
 	
-	@Test
-	public void testFoo() {
-		Jugador jugador = new Jugador();
-		Assert.assertEquals(0, jugador.foo());
-	}
-
+	
 	@Test
 	public void testUnJugadorSeCreaConUnCiertoNombrePasadoComoParametro() {
 		Jugador jugador = new Jugador("Ariel");
@@ -23,7 +18,7 @@ public class JugadorTest {
 	@Test
 	public void testUnJugadorSeCreaConCienMilPesosDeDineroDisponible() {
 		Jugador jugador = new Jugador("Ariel");
-		Assert.assertEquals(jugador.dineroDisponible(), 100000);
+		Assert.assertEquals(jugador.capitalTotal(), 100000);
 	}
 	
 	@Test
@@ -31,15 +26,14 @@ public class JugadorTest {
 		Jugador jugador = new Jugador("Ariel");
 		Quini6 quini6 = new Quini6();
 		jugador.caerEnCasillero(quini6);
-		Assert.assertEquals(jugador.dineroDisponible(), 150000);		
+		Assert.assertEquals(jugador.capitalTotal(), 150000);		
 	}
 	
 	@Test public void testUnJugadorCaeEnQuini6PorSegundaVezYSuCapitalAumentaEn30000() {
 		Jugador jugador = new Jugador("Ariel");
 		Quini6 quini6 = new Quini6();
-		quini6.registrarJugador(jugador);
 		jugador.caerEnCasillero(quini6);
 		jugador.caerEnCasillero(quini6);
-		Assert.assertEquals(jugador.dineroDisponible(), 180000);	
+		Assert.assertEquals(180000, jugador.capitalTotal());	
 	}
 }
