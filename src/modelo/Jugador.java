@@ -31,4 +31,17 @@ public class Jugador {
 		capital += unMonto;
 	}
 
+	// En principio devuelve boolean, pero habria que contemplar en que momento el jugador decide
+	// por si o por no a comprar el terreno. Siempre y cuando tenga el capital suficiente.
+	public boolean venderTerrenoEn(Terreno unTerreno, int precio) {
+		if(precio <= capital) {
+			capital-= precio;
+			return true;
+		}
+		return false;
+	}
+
+
+
+
 }
