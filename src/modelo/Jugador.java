@@ -3,15 +3,17 @@ package modelo;
 public class Jugador {
 	private String nombre;
 	private int capital;
+	private Casillero casilleroActual;
 
 	public Jugador(String unNombre) {
 		nombre = unNombre;
 		capital = 100000;
 	}
 
-	public Jugador() {
-		nombre = "";
-		capital = 100000;
+	public Jugador(String string, Casillero salida) {
+		this.nombre = "";
+		this.capital = 100000;
+		this.casilleroActual = salida;
 	}
 
 	public String tuNombreEs() {
@@ -30,6 +32,10 @@ public class Jugador {
 	public void entregarDinero(int unMonto) {
 		capital += unMonto;
 	}
+	
+	public Casillero getCasilleroActual() {
+		return casilleroActual;
+	}
 
 	// En principio devuelve boolean, pero habria que contemplar en que momento el jugador decide
 	// por si o por no a comprar el terreno. Siempre y cuando tenga el capital suficiente.
@@ -41,7 +47,14 @@ public class Jugador {
 		return false;
 	}
 
-
-
+	public void desplazar(int cantidadCasilleros) {
+		for (int i = 0; i <= cantidadCasilleros;i++) {
+			//this.avanzarUnCasillero();
+		}
+	}
+	
+	private void avanzarUnCasillero() {
+		this.casilleroActual = .getCasilleroSiguiente(this.casilleroActual);
+	}
 
 }

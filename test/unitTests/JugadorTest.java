@@ -1,12 +1,13 @@
 package unitTests;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import org.junit.Assert;
-
 import modelo.BuenosAiresSur;
+import modelo.Casillero;
 import modelo.Jugador;
 import modelo.Quini6;
+import modelo.Tablero;
 
 public class JugadorTest {
 	
@@ -56,6 +57,24 @@ public class JugadorTest {
 		BuenosAiresSur bsasSur = new BuenosAiresSur();
 		jugador.caerEnCasillero(bsasSur);
 		Assert.assertEquals(jugador, bsasSur.propietario());
+	}
+	
+	@Test
+	public void testGetCasilleroActualDeUnNuevoJugadorEsSalida() {
+		Tablero tablero = new Tablero();
+		Casillero salida = tablero.getCasilleroSalida();
+		Jugador jugador = new Jugador("Gonza",salida);
+		Assert.assertEquals(salida, jugador.getCasilleroActual());
+	}
+	
+	@Test
+	public void testJugadorAvanzaUnCasilleroDesdeLaSalidaSeUbicaEnQuini6() {
+		Tablero tablero = new Tablero();
+		Casillero salida = tablero.getCasilleroSalida();
+		Jugador jugador = new Jugador("Gonza",salida);
+		Casillero quini6 = tablero.getQuini6();
+		jugador.desplazar(1);
+		Assert.assertEquals(quini6, jugador.getCasilleroActual());
 	}
 	
 	
