@@ -54,7 +54,7 @@ public class Jugador {
 	}
 	
 	private void avanzarUnCasillero() {
-		this.casilleroActual = .getCasilleroSiguiente(this.casilleroActual);
+		this.casilleroActual = this.casilleroActual.getCasilleroSiguiente();
 	}
 
 }

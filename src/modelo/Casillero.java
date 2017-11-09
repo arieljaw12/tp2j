@@ -6,5 +6,5 @@ public abstract class Casillero {
 		
 	}
 	
-	public abstract void afectarJugador(Jugador unJugador);
+	public abstract void afectarJugador(Jugador unJugador); 
 }
